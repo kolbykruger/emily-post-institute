@@ -92,9 +92,21 @@
         justify-content: flex-end;
         margin-bottom: 1.5em;
 
-        li a {
-            opacity: 0.85;
-            @include fs(16px);
+        li {
+            margin: 0 0 0 0.5em;
+
+            a {
+                opacity: 0.85;
+                @include fs(16px);
+                padding: 0.35em 0.75em;
+                border-radius: 0.25em;
+
+                &:hover,
+                &:focus {
+                    color: inherit;
+                    background-color: rgba($color-6, 0.1);
+                }
+            }
 
             i {
                 @include fs(14px);

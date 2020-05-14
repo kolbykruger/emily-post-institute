@@ -17,6 +17,24 @@
         margin: 1em 0;
     }
 
+    .flickity-prev-next-button {
+
+        &.next {
+            top: 100%;
+            right: 0;
+        }
+
+        &.previous {
+            top: 100%;
+            right: 44px;
+            left: auto;
+        }
+
+        &[disabled] {
+            display: none;
+        }
+    }
+
     .item {
         position: relative;
         display: flex;
@@ -26,7 +44,7 @@
         width: 100%;
         margin: 3em 1em;
         padding: 2em;
-        min-height: 520px;
+        min-height: 500px;
         text-decoration: none;
         color: inherit;
         background-color: $color-1;
@@ -69,7 +87,7 @@
 
             .icon {
                 font-size: 2rem;
-                margin-bottom: 1.5em;
+                margin-bottom: 2em;
                 color: $color-6;
             }
 
@@ -80,6 +98,7 @@
         }
 
         .arrow {
+            display: none;
             position: absolute;
             top: 100%;
             left: 0;

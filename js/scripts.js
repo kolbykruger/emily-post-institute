@@ -37,23 +37,23 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //Flickity Carousel
-// $('.carousel .group').flickity({
-//     cellSelector: '.slide',
-//     wrapAround: true,
-//     adaptiveHeight: false,
-//     cellAlign: 'center',
-//     prevNextButtons: false,
-//     pageDots: true,
-//     imagesLoaded: true,
-//     autoPlay: 8000,
-// });
+$('.carousel .group').flickity({
+    cellSelector: '.slide',
+    wrapAround: true,
+    adaptiveHeight: false,
+    cellAlign: 'center',
+    prevNextButtons: true,
+    pageDots: false,
+    imagesLoaded: true,
+    autoPlay: 8000,
+});
 
 $('.features .group').flickity({
     cellSelector: '.item',
     contain: true,
     adaptiveHeight: true,
     cellAlign: 'left',
-    prevNextButtons: false,
+    prevNextButtons: true,
     pageDots: false,
     imagesLoaded: true,
 });

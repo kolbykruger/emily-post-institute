@@ -8,13 +8,25 @@
 
     }
 
+    .book-list {
+        margin: 0 -1em;
+    }
+
     .book-item {
+        width: calc(25% - 2em);
+        margin: 1em;
+        text-decoration: none;
+        color: inherit;
 
         .cover {
 
             img {
                 width: 100%;
             }
+        }
+
+        .details {
+            margin-top: 1em;
         }
     }
 }

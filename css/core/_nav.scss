@@ -23,7 +23,7 @@
             overflow: hidden;
 
             a {
-                @include fs(13px);
+                @include fs(16px);
                 padding: 10px;
                 margin: 0;
 
@@ -70,7 +70,7 @@
     }
 
     a {
-        @include fs(16px);
+        @include fs(20px);
         display: block;
         color: $color-0;
         text-decoration: none;
@@ -85,6 +85,16 @@
             @include fs(12px);
             cursor: pointer;
             margin: 0 0 0 6px;
+        }
+    }
+
+    .utility-nav {
+        justify-content: flex-end;
+        margin-bottom: 1.5em;
+
+        li {
+            opacity: 0.85;
+            @include fs(16px);
         }
     }
 

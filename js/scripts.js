@@ -37,15 +37,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //Flickity Carousel
-$('.carousel .group').flickity({
-    cellSelector: '.slide',
-    wrapAround: true,
+// $('.carousel .group').flickity({
+//     cellSelector: '.slide',
+//     wrapAround: true,
+//     adaptiveHeight: false,
+//     cellAlign: 'center',
+//     prevNextButtons: false,
+//     pageDots: true,
+//     imagesLoaded: true,
+//     autoPlay: 8000,
+// });
+
+$('.features .group').flickity({
+    cellSelector: '.item',
+    contain: true,
     adaptiveHeight: false,
     cellAlign: 'center',
     prevNextButtons: false,
-    pageDots: true,
+    pageDots: false,
     imagesLoaded: true,
-    autoPlay: 8000,
 });
 
 //Universal Tables

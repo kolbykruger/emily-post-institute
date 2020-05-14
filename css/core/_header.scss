@@ -4,6 +4,7 @@
         position: relative;
         max-width: $container-width;
         width: 100%;
+        padding: 1em;
     }
 
     .group {
@@ -13,7 +14,7 @@
 
     .logo {
         width:100%;
-        max-width: 240px;
+        max-width: 200px;
 
         a {
             display: block;

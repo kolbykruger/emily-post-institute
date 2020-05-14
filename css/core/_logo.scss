@@ -1,0 +1,31 @@
+.logo {
+
+    svg {
+
+        path {
+            fill: rgb(245, 134, 98);
+
+        }
+    }
+
+    a {
+
+        &:hover,
+        &:focus {
+
+            svg path {
+                animation: logo-color-shift 5s linear infinite;
+            }
+        }
+
+        @keyframes logo-color-shift {
+            0% {fill: $color-1;}
+            16.666% {fill: $color-2;}
+            33.333% {fill: $color-3;}
+            50% {fill: $color-4;}
+            66.666% {fill: $color-5;}
+            83.333% {fill: $color-6;}
+            100% {fill: $color-1;}
+        }
+    }
+}

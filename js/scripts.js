@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
 $('.features .group').flickity({
     cellSelector: '.item',
     contain: true,
-    adaptiveHeight: false,
-    cellAlign: 'center',
+    adaptiveHeight: true,
+    cellAlign: 'left',
     prevNextButtons: false,
     pageDots: false,
     imagesLoaded: true,

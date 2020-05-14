@@ -92,9 +92,15 @@
         justify-content: flex-end;
         margin-bottom: 1.5em;
 
-        li {
+        li a {
             opacity: 0.85;
             @include fs(16px);
+
+            i {
+                @include fs(14px);
+                margin: 0;
+                margin-right: 0.25em;
+            }
         }
     }
 

@@ -939,10 +939,16 @@ hr::before {
   justify-content: flex-end;
   margin-bottom: 1.5em;
 }
-.nav .utility-nav li {
+.nav .utility-nav li a {
   opacity: 0.85;
   font-size: 16px;
   font-size: 1rem;
+}
+.nav .utility-nav li a i {
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin: 0;
+  margin-right: 0.25em;
 }
 @media (max-width: 900px) {
   .nav {
@@ -1413,6 +1419,14 @@ input[type=submit].button {
 }
 .notification .container * {
   color: #fff;
+}
+
+.clients {
+  background: #C2C3C4;
+  padding: 3em 0;
+}
+.books .book-item .cover img {
+  width: 100%;
 }
 
 .responsive-iframe {
@@ -1962,6 +1976,7 @@ p.simplesearch-results,
 }
 .features .flickity-viewport {
   width: 100%;
+  margin: 1em 0;
 }
 .features .item {
   position: relative;
@@ -1970,8 +1985,7 @@ p.simplesearch-results,
   justify-content: space-between;
   max-width: 330px;
   width: 100%;
-  height: 100%;
-  margin: 0 1em;
+  margin: 2em 1em;
   padding: 2em;
   min-height: 520px;
   text-decoration: none;
@@ -1993,6 +2007,11 @@ p.simplesearch-results,
 }
 .features .item:hover, .features .item:focus {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translate(0, -1em);
+}
+.features .item:hover .arrow, .features .item:focus .arrow {
+  opacity: 1;
+  transform: translate(0, 50%);
 }
 .features .item .title .icon {
   font-size: 2rem;
@@ -2001,12 +2020,14 @@ p.simplesearch-results,
 }
 .features .item .arrow {
   position: absolute;
-  bottom: 0;
+  top: 100%;
   left: 0;
   right: 0;
+  color: #0D485F;
   text-align: center;
-  transform: translate(0, 50%);
+  transform: translate(-1em, 50%);
   opacity: 0;
+  transition: 150ms ease;
 }
 
 .gallery {

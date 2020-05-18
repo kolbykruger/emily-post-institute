@@ -58,5 +58,52 @@ $('.features .group').flickity({
     imagesLoaded: true,
 });
 
+//Menu Books
+document.addEventListener('DOMContentLoaded', function() {
+    let bestSellers = document.querySelector('.books-menu .menu-section:nth-of-type(1) .book-list');
+    let bestSellerChildren = '';
+    let newProducts = document.querySelector('.books-menu .menu-section:nth-of-type(2) .book-list');
+    let newProductsChildren = '';
+
+    if (bestSellers) {
+        bestSellerChildren = bestSellers.querySelectorAll('.book-item');
+    }
+    if (newProducts) {
+        newProductsChildren = newProducts.querySelectorAll('.book-item');
+    }
+
+    if (bestSellerChildren.length > 3) {
+        //do slider
+        var menuSliderOne = new Flickity(bestSellers, {
+            cellSelector: '.book-item',
+            wrapAround: false,
+            adaptiveHeight: true,
+            cellAlign: 'left',
+            contain: true,
+            groupCells: 3,
+            prevNextButtons: false,
+            pageDots: true,
+            imagesLoaded: true,
+        });
+    }
+
+    if (newProductsChildren.length > 3) {
+        //do slider
+        var menuSliderOne = new Flickity(newProducts, {
+            cellSelector: '.book-item',
+            wrapAround: false,
+            adaptiveHeight: true,
+            cellAlign: 'left',
+            contain: true,
+            groupCells: 3,
+            prevNextButtons: false,
+            pageDots: true,
+            imagesLoaded: true
+        });
+    }
+
+
+});
+
 //Universal Tables
 $('table').wrap("<div class='universal-table'></div>");

@@ -30,11 +30,11 @@ $button-background: $color-1;
     display: inline-flex;
     align-items: center;
     margin: 0;
-    padding: 0.75em 1em;
+    padding: 0.875em 1.25em;
     background: $button-background;
     color: $button-color;
     border-radius: 0.25em;
-    line-height: 1;
+    line-height: 1.5;
     transition: 150ms ease;
     text-decoration: none;
     user-select: none;
@@ -58,7 +58,7 @@ $button-background: $color-1;
 
     i + span,
     span + i {
-        margin-left: 0.5em;
+        margin-left: 1em;
     }
 
     // Unique styles

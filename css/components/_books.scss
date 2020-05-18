@@ -11,6 +11,10 @@
     .menu &.books-menu {
         justify-content: space-between;
 
+        .book-list {
+            margin: 0;
+        }
+
         .menu-section {
             width: 45%;
         }

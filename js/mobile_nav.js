@@ -54,19 +54,3 @@ for (i = 0; i < mobileNavTriggers.length; i++) {
         drop.setAttribute('aria-expanded', 'true');
     });
 }
-
-//Mobile nav triggers
-var mobileNavTriggerLinks = document.querySelectorAll('.mobile_nav ul.top > .trigger > a');
-for (i = 0; i < mobileNavTriggerLinks.length; i++) {
-    if (mobileNavTriggerLinks[i].dataset.searchable == 0) {
-        mobileNavTriggerLinks[i].addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            //Create click event for button
-            var evtObj = document.createEvent('Events');
-            evtObj.initEvent('click', true, false);
-            e.target.nextElementSibling.dispatchEvent(evtObj)
-            
-        })
-    }
-};

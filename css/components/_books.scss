@@ -11,7 +11,7 @@
     .menu &.books-menu {
         justify-content: space-between;
 
-        .book-list {
+        .book-list.flickity-enabled {
             margin: 0;
         }
 

@@ -1368,6 +1368,7 @@ body.navigation-open .menu-overlay {
   max-height: 100%;
   overflow: auto;
   background: #f6f9fc;
+  outline: none;
 }
 @media (max-height: 850px) {
   .menu {
@@ -1733,7 +1734,7 @@ input[type=submit].button {
 .menu .books.books-menu {
   justify-content: space-between;
 }
-.menu .books.books-menu .book-list {
+.menu .books.books-menu .book-list.flickity-enabled {
   margin: 0;
 }
 .menu .books.books-menu .menu-section {
@@ -2406,6 +2407,92 @@ p.simplesearch-results,
   transform: translate(-1em, 50%);
   opacity: 0;
   transition: 150ms ease;
+}
+
+.small-features .group {
+  margin: 0 -1em;
+}
+.small-features .small-feature-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: calc(25% - 2em);
+  padding: 2em;
+  margin: 1em;
+  padding-left: 2.5em;
+  border-radius: 0.125em;
+  background: #f6f9fc;
+  text-decoration: none;
+  color: inherit;
+  transition: 250ms ease;
+  overflow: hidden;
+}
+.small-features .small-feature-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0.5em;
+  background: #D6EDE6;
+  transition: 250ms ease;
+}
+.small-features .small-feature-item .info {
+  position: relative;
+}
+.small-features .small-feature-item .info h3 {
+  margin: 0;
+  transition: 250ms ease;
+}
+.small-features .small-feature-item .arrow {
+  position: absolute;
+  bottom: 0.5em;
+  right: 0.5em;
+  opacity: 0;
+  color: #546E78;
+  pointer-events: none;
+  font-size: 1.25rem;
+  transform: translate(-1.5em, 0);
+  transition: 250ms ease;
+  transition-delay: 100ms;
+}
+.small-features .small-feature-item:nth-of-type(1)::before {
+  background: #D6EDE6;
+}
+.small-features .small-feature-item:nth-of-type(2)::before {
+  background: #F7CB8E;
+}
+.small-features .small-feature-item:nth-of-type(3)::before {
+  background: #C2C3C4;
+}
+.small-features .small-feature-item:nth-of-type(4)::before {
+  background: #F48561;
+}
+.small-features .small-feature-item:nth-of-type(5)::before {
+  background: #4D846B;
+}
+.small-features .small-feature-item:nth-of-type(5):hover h3,
+.small-features .small-feature-item:nth-of-type(5):hover .arrow, .small-features .small-feature-item:nth-of-type(5):focus h3,
+.small-features .small-feature-item:nth-of-type(5):focus .arrow {
+  color: #fff;
+}
+.small-features .small-feature-item:nth-of-type(6)::before {
+  background: #0D485F;
+}
+.small-features .small-feature-item:nth-of-type(6):hover h3,
+.small-features .small-feature-item:nth-of-type(6):hover .arrow, .small-features .small-feature-item:nth-of-type(6):focus h3,
+.small-features .small-feature-item:nth-of-type(6):focus .arrow {
+  color: #fff;
+}
+.small-features .small-feature-item:hover, .small-features .small-feature-item:focus {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.small-features .small-feature-item:hover::before, .small-features .small-feature-item:focus::before {
+  width: 100%;
+}
+.small-features .small-feature-item:hover .arrow, .small-features .small-feature-item:focus .arrow {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 .gallery {

@@ -544,7 +544,6 @@ body {
   font-size: 1rem;
   max-width: 100vw;
   overflow-x: hidden;
-  border-top: 0.5em solid #F48561;
   padding-top: 8em;
 }
 
@@ -800,7 +799,6 @@ hr::before {
   width: 100%;
   height: 8em;
   background: #fff;
-  border-bottom: 2px solid #f8f8f8;
   z-index: 2;
 }
 body.navigation-open .header {
@@ -1333,8 +1331,8 @@ footer .ewd img {
   animation: menu-close-transform 0.6s ease-in-out forwards;
 }
 body.navigation-open .menus {
-  animation: menu-open-transform 0.6s ease-in-out forwards;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  animation: menu-open-transform 0.6s ease-in-out forwards, menu-open-background 0.6s 0.3s ease-in-out forwards;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 body.navigation-open .menus .container {
   animation: menu-open-container-opacity 0.3s ease-in forwards 0.6s;
@@ -1363,7 +1361,7 @@ body.navigation-open .menu-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  padding-top: 8em;
+  margin-top: 8em;
   width: 100%;
   height: 100%;
   max-height: 100%;
@@ -1408,12 +1406,12 @@ body.navigation-open .menu-overlay {
   animation-delay: 1.35s;
 }
 .menu .container {
-  padding: 3em 1em;
+  padding: 1em;
   opacity: 0;
   max-width: 1400px;
 }
 .menu .group {
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: flex-start;
 }
 .menu .group .menu-section {
@@ -1425,6 +1423,9 @@ body.navigation-open .menu-overlay {
   .menu .group .menu-section {
     width: 33.333%;
   }
+}
+.menu .group[data-count="1"] .menu-section {
+  width: 100%;
 }
 .menu .group[data-count="2"] .menu-section {
   width: 50%;
@@ -1477,7 +1478,7 @@ body.navigation-open .menu-overlay {
 }
 .menu ul a:not(.button) {
   position: relative;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   overflow-wrap: break-word;
   text-decoration: none;
   color: #546E78;
@@ -1493,12 +1494,28 @@ body.navigation-open .menu-overlay {
   width: 100%;
   padding: 0 1em;
 }
+.menu .menu-actions ~ .menu-section {
+  margin-top: 3em;
+}
+.menu .menu-summary {
+  padding: 1em;
+  padding-top: 0;
+  margin-bottom: 1em;
+}
 @keyframes menu-open-transform {
   from {
     transform: translate(0, -100%);
   }
   to {
     transform: translate(0, 0);
+  }
+}
+@keyframes menu-open-background {
+  from {
+    background: #f6f9fc;
+  }
+  to {
+    background: #fff;
   }
 }
 @keyframes menu-close-transform {
@@ -1701,6 +1718,15 @@ input[type=submit].button {
 .clients {
   background: #C2C3C4;
   padding: 3em 0;
+}
+.menu .books.books-menu {
+  justify-content: space-between;
+}
+.menu .books.books-menu .menu-section {
+  width: 45%;
+}
+.menu .books.books-menu .book-item {
+  width: calc(33.333% - 2em);
 }
 .books .book-list {
   margin: 0 -1em;

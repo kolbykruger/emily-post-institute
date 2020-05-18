@@ -8,6 +8,18 @@
 
     }
 
+    .menu &.books-menu {
+        justify-content: space-between;
+
+        .menu-section {
+            width: 45%;
+        }
+
+        .book-item {
+            width: calc(33.333% - 2em);
+        }
+    }
+
     .book-list {
         margin: 0 -1em;
     }

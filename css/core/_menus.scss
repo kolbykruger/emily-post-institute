@@ -17,8 +17,8 @@ $menu-background-color: #f6f9fc;
     }
 
     body.navigation-open & {
-        animation: menu-open-transform 0.6s ease-in-out forwards;
-        box-shadow: $box-shadow-3;
+        animation: menu-open-transform 0.6s ease-in-out forwards, menu-open-background 0.6s 0.3s ease-in-out forwards;
+        box-shadow: $box-shadow-5;
 
         .container {
             animation: menu-open-container-opacity 0.3s ease-in forwards 0.6s;
@@ -50,7 +50,7 @@ $menu-background-color: #f6f9fc;
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: 8em;
+    margin-top: 8em;
     width: 100%;
     height: 100%;
     max-height: 100%;
@@ -74,13 +74,13 @@ $menu-background-color: #f6f9fc;
     }
 
     .container {
-        padding: 3em 1em;
+        padding: 1em;
         opacity: 0;
         max-width: $container-width;
     }
 
     .group {
-        align-items: flex-start;
+        align-items: stretch;
         justify-content: flex-start;
 
         .menu-section {
@@ -93,6 +93,9 @@ $menu-background-color: #f6f9fc;
             }
         }
 
+        &[data-count="1"] .menu-section {
+            width: 100%;
+        }
         &[data-count="2"] .menu-section {
             width: 50%;
         }
@@ -161,7 +164,7 @@ $menu-background-color: #f6f9fc;
 
         a:not(.button) {
             position: relative;
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             overflow-wrap: break-word;
             text-decoration: none;
             color: $color-0;
@@ -182,11 +185,26 @@ $menu-background-color: #f6f9fc;
         width: 100%;
         padding: 0 1em;
         //margin-top: 3em;
+
+        & ~ .menu-section {
+            margin-top: 3em;
+        }
+    }
+
+    .menu-summary {
+        padding: 1em;
+        padding-top: 0;
+        margin-bottom: 1em;
     }
 
     @keyframes menu-open-transform {
-        from { transform: translate(0, -100%); }
-        to { transform: translate(0, 0); }
+        from { transform: translate(0, -100%);}
+        to { transform: translate(0, 0);}
+    }
+
+    @keyframes menu-open-background {
+        from {background: $menu-background-color}
+        to {background: #fff;}
     }
 
     @keyframes menu-close-transform {

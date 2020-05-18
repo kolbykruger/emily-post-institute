@@ -80,6 +80,10 @@ $button-background: $color-1;
         background: transparent;
     }
 
+    &-size-small {
+        font-size: 0.875rem;
+    }
+
     @media (max-width: 768px) {
         &,
         + &{

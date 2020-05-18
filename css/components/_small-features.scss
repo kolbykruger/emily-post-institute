@@ -1,4 +1,7 @@
 .small-features {
+    background: #f6f9fc;
+    padding: 3em 0;
+    background: linear-gradient(to right, transparent , #f6f9fc, transparent);
 
     .container {
 
@@ -17,7 +20,7 @@
         margin: 1em;
         padding-left: 2.5em;
         border-radius: 0.125em;
-        background: #f6f9fc;
+        background: #fff;
         text-decoration: none;
         color: inherit;
         transition: $transition-2;

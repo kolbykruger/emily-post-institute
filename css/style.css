@@ -1420,6 +1420,18 @@ body.navigation-open .menu-overlay {
 .menu .flickity-viewport {
   width: 100%;
 }
+.menu .menu-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+.menu .menu-head h2,
+.menu .menu-head a {
+  width: auto;
+}
+.menu .menu-head a {
+  margin-left: 1em;
+}
 .menu .container {
   padding: 1em;
   opacity: 0;
@@ -1475,6 +1487,7 @@ body.navigation-open .menu-overlay {
 }
 .menu h2 {
   padding: 1rem;
+  margin: 0;
 }
 .menu h3 a {
   color: #0D485F;
@@ -1646,6 +1659,9 @@ body.navigation-open .menu-overlay {
 .button-text {
   color: #F48561;
   background: transparent;
+}
+.button-size-small {
+  font-size: 0.875rem;
 }
 @media (max-width: 768px) {
   .button, + .button {
@@ -2229,6 +2245,12 @@ p.simplesearch-results,
 }
 .carousel .container {
   padding: 0;
+  padding-top: 1em;
+}
+.carousel .group {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 0.125em;
+  overflow: hidden;
 }
 .carousel .flickity-viewport {
   width: 100%;
@@ -2259,10 +2281,9 @@ p.simplesearch-results,
   width: 100%;
   bottom: 0;
   left: 0;
-  text-align: center;
-  color: #fff;
   padding: 2em;
-  text-align: center;
+  background: #f6f9fc;
+  background: linear-gradient(to top right, rgba(246, 249, 252, 0.75), transparent);
 }
 .carousel .slide .title {
   margin: 0;
@@ -2282,19 +2303,21 @@ p.simplesearch-results,
   }
 }
 .carousel .slide .description {
+  color: #0D485F;
   font-weight: 500;
+  margin-bottom: 0.5em;
 }
 .carousel .slide .description {
   font-size: 1rem;
 }
 @media screen and (min-width: 38rem) {
   .carousel .slide .description {
-    font-size: calc(1rem + 0.75 * ((100vw - 38rem) / 32));
+    font-size: calc(1rem + 0.5 * ((100vw - 38rem) / 32));
   }
 }
 @media screen and (min-width: 70rem) {
   .carousel .slide .description {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 .carousel .slide .button {
@@ -2409,6 +2432,11 @@ p.simplesearch-results,
   transition: 150ms ease;
 }
 
+.small-features {
+  background: #f6f9fc;
+  padding: 3em 0;
+  background: linear-gradient(to right, transparent, #f6f9fc, transparent);
+}
 .small-features .group {
   margin: 0 -1em;
 }
@@ -2421,7 +2449,7 @@ p.simplesearch-results,
   margin: 1em;
   padding-left: 2.5em;
   border-radius: 0.125em;
-  background: #f6f9fc;
+  background: #fff;
   text-decoration: none;
   color: inherit;
   transition: 250ms ease;

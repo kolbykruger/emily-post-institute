@@ -3,8 +3,15 @@
       active: function() {
         sessionStorage.fonts = true;
       },
-      google: {
-        families: ['Open+Sans:300,400,400i,500,600,700']
+      custom: {
+        families: [
+            'Adobe Caslon Pro',
+            'Optima'
+        ]  ,
+        urls: [
+            '../fonts/optima/stylesheet.css',
+            '../fonts/adobe-caslon-pro/stylesheet.css'
+        ]
       },
       timeout: 2000
     };

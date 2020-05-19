@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Adobe Caslon Pro';
+    src: url('ACaslonPro-Semibold.woff2') format('woff2'),
+        url('ACaslonPro-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Adobe Caslon Pro';
+    src: url('ACaslonPro-Regular.woff2') format('woff2'),
+        url('ACaslonPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

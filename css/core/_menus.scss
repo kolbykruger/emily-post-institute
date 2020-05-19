@@ -168,8 +168,8 @@ $menu-background-color: #f6f9fc;
     }
 
     h3 {
-        //font-size: 1.25rem;
-        //text-transform: uppercase;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
 
         a {
             color: $color-6;

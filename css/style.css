@@ -570,6 +570,25 @@ p:last-of-type {
   margin: 0;
 }
 
+address {
+  margin: 0 0 1em;
+  font-weight: 400;
+  line-height: 1.6;
+}
+address {
+  font-size: 1rem;
+}
+@media screen and (min-width: 38rem) {
+  address {
+    font-size: calc(1rem + 0.125 * ((100vw - 38rem) / 32));
+  }
+}
+@media screen and (min-width: 70rem) {
+  address {
+    font-size: 1.125rem;
+  }
+}
+
 a {
   color: #F48561;
 }
@@ -1215,36 +1234,179 @@ body.menu-open .mobile_nav {
 
 footer {
   width: 100%;
-  background: #f8f8f8;
-  padding: 1em;
-  margin: 1em 0 0;
+  background: #C2C3C4;
+  margin-top: 0;
 }
-footer .container {
-  max-width: 1400px;
+
+footer a:hover, footer a:focus {
+  color: #F48561;
+}
+
+.footer a:not(.button) {
+  text-decoration: none;
+  transition: 150ms ease;
+}
+
+.footer .group {
+  justify-content: space-between;
+  margin: 3em auto 0;
+}
+
+.footer .group .group {
+  margin: 0;
+}
+
+.footer .container > .group:last-of-type {
+  padding-top: 3em;
+  padding-bottom: 2em;
+  margin-top: 3em;
+  align-items: center;
+}
+
+.footer .logo {
+  max-width: 500px;
   width: 100%;
-  text-align: center;
-  color: #546E78;
 }
-footer a {
-  color: #546E78;
+.footer .logo img {
+  width: 100%;
 }
-footer .address {
-  margin: 0 auto 5px;
+.footer .logo p {
+  opacity: 0.5;
+  font-size: 1rem;
 }
-footer .contact {
-  margin: 0 auto 5px;
+
+.footer .logo {
+  max-width: 250px;
 }
-footer .copyright {
-  margin: 0 auto 5px;
-}
-footer .ewd {
-  margin: 0 auto 5px;
-  width: 200px;
-}
-footer .ewd img {
+
+.footer .logo svg {
   width: 100%;
 }
 
+.footer .section {
+  margin-left: 3em;
+}
+
+.footer .section h3,
+.footer .section a {
+  margin-bottom: 1em;
+}
+
+.footer .section a {
+  display: block;
+  margin: 0.35em 0;
+  line-height: 1.5;
+  color: inherit;
+  transition: 150ms ease;
+}
+.footer .section a:hover, .footer .section a:focus {
+  opacity: 1;
+  color: #F48561;
+}
+
+.footer .section address {
+  margin-bottom: 1em;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer li {
+  padding: 0;
+}
+
+.footer .social-icons {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 1200px) {
+  .footer .tagline {
+    max-width: 100%;
+    flex: 1;
+  }
+}
+@media (max-width: 900px) {
+  .footer {
+    margin-top: 3em;
+  }
+
+  .footer .tagline {
+    margin: 0em auto 3em;
+  }
+
+  .footer .section {
+    margin-left: 0;
+    margin: 0;
+    padding: 1em;
+    width: 50%;
+    text-align: center;
+  }
+
+  .footer .section h3 {
+    font-size: 1.5rem;
+  }
+
+  .footer .links {
+    width: 100%;
+  }
+
+  .footer h2 {
+    text-align: center;
+  }
+
+  .footer .buttons {
+    justify-content: center;
+  }
+
+  .footer .social-icons {
+    margin-top: 1em;
+  }
+
+  .footer .section a {
+    margin: 0;
+    padding: 0.35em 0;
+  }
+}
+@media (max-width: 600px) {
+  .footer .logo {
+    margin: 0 auto;
+  }
+
+  .footer .social-icons {
+    display: flex;
+    width: 100%;
+    order: -1;
+    margin-top: 0;
+    margin-bottom: 2em;
+    font-size: 1.5rem;
+  }
+
+  .footer .container > .group:last-of-type {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .footer .section {
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  .footer .group {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer .tagline {
+    margin: 0em auto 1em;
+  }
+
+  .footer .container > .group:last-of-type {
+    padding-top: 0;
+    margin-top: 1.5em;
+  }
+}
 .layout {
   width: 100%;
 }
@@ -1489,6 +1651,10 @@ body.navigation-open .menu-overlay {
   padding: 1rem;
   margin: 0;
 }
+.menu h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 .menu h3 a {
   color: #0D485F;
   text-decoration: none;
@@ -1592,6 +1758,10 @@ body.navigation-open .menu-overlay {
   margin: 1em auto;
   margin-bottom: 3em;
   text-align: center;
+}
+.section-heading h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* Button Styling */
@@ -1748,8 +1918,15 @@ input[type=submit].button {
   background: #C2C3C4;
   padding: 3em 0;
 }
+.books .group {
+  justify-content: center;
+}
 .menu .books.books-menu {
   justify-content: space-between;
+}
+.menu .books.books-menu .book-list {
+  margin-left: -1em;
+  margin-right: 1em;
 }
 .menu .books.books-menu .book-list.flickity-enabled {
   margin: 0;
@@ -1765,6 +1942,7 @@ input[type=submit].button {
 }
 .books .book-item {
   width: calc(25% - 2em);
+  max-width: 250px;
   margin: 1em;
   text-decoration: none;
   color: inherit;

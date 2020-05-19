@@ -1,0 +1,67 @@
+.podcast {
+    background: $color-5;
+    padding: 3em 0;
+
+    &-widget {
+        margin-top: -3em;
+    }
+
+    .container {
+
+    }
+
+    .group {
+        margin: 0 -1em;
+    }
+
+    .podcast-item {
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(25% - 2em);
+        margin: 1em;
+        padding: 2em;
+        border-radius: 0.125em;
+        overflow: hidden;
+        background: rgba(255,255,255,0.5);
+        text-decoration: none;
+        text-align: center;
+        color: inherit;
+        transition: $transition-1;
+
+        &:first-of-type {
+
+            &::before {
+                content: 'New';
+                position: absolute;
+                top: 1em;
+                left: 1em;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 0.875rem;
+                background: $color-1;
+                color: #fff;
+                padding: 0.5em 0.75em;
+                border-radius: 0.125em;
+            }
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5em;
+            color: $color-6;
+        }
+
+        .date {
+            margin-bottom: 0.5em;
+        }
+
+        &:hover,
+        &:focus {
+            transform: translate(0, -1em);
+            box-shadow: $box-shadow-5;
+        }
+    }
+}

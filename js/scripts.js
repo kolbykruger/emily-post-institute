@@ -43,7 +43,7 @@ $('.carousel .group').flickity({
     adaptiveHeight: false,
     cellAlign: 'center',
     prevNextButtons: true,
-    pageDots: false,
+    pageDots: true,
     imagesLoaded: true,
     autoPlay: 8000,
 });
@@ -56,6 +56,7 @@ $('.features .group').flickity({
     prevNextButtons: true,
     pageDots: false,
     imagesLoaded: true,
+    groupCells: 2,
 });
 
 //Menu Books

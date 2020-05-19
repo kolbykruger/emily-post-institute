@@ -1182,7 +1182,7 @@ body.menu-open .mobile_nav {
   fill: #f58662;
 }
 .logo a:hover svg path, .logo a:focus svg path {
-  animation: logo-color-shift 5s linear infinite;
+  animation: logo-color-shift 6s ease-in-out infinite;
 }
 @keyframes logo-color-shift {
   0% {

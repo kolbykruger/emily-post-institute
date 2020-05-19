@@ -14,7 +14,7 @@
         &:focus {
 
             svg path {
-                animation: logo-color-shift 5s linear infinite;
+                animation: logo-color-shift 6s ease-in-out infinite;
             }
         }
 

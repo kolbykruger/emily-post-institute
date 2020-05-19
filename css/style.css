@@ -1947,6 +1947,29 @@ input[type=submit].button {
   text-decoration: none;
   color: inherit;
 }
+.books .book-item:hover .cover::before {
+  animation: shine 600ms forwards;
+}
+.books .book-item .cover {
+  position: relative;
+  overflow: hidden;
+}
+.books .book-item .cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  display: block;
+  transform: skewX(-25deg);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.3) 100%);
+}
+@keyframes shine {
+  to {
+    left: 125%;
+  }
+}
 .books .book-item .cover img {
   width: 100%;
 }

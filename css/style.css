@@ -1654,7 +1654,7 @@ body.navigation-open .menu-overlay {
 }
 .button-secondary {
   color: inherit;
-  background: rgba(0, 0, 0, 0.25);
+  background: #C2C3C4;
 }
 .button-text {
   color: #F48561;
@@ -2247,13 +2247,34 @@ p.simplesearch-results,
   padding: 0;
   padding-top: 1em;
 }
-.carousel .group {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  border-radius: 0.125em;
-  overflow: hidden;
-}
 .carousel .flickity-viewport {
   width: 100%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 0.125em;
+}
+.carousel .flickity-prev-next-button {
+  transform: none;
+  background: none;
+  box-shadow: none;
+}
+.carousel .flickity-prev-next-button.next {
+  top: auto;
+  bottom: 0.5em;
+  right: 0.5em;
+}
+.carousel .flickity-prev-next-button.previous {
+  top: auto;
+  bottom: 0.5em;
+  right: calc(44px + 0.5em);
+  left: auto;
+}
+.carousel .flickity-prev-next-button[disabled] {
+  display: none;
+}
+.carousel .flickity-page-dots {
+  bottom: 1em;
+  left: 1em;
+  width: auto;
 }
 .carousel .slide {
   -webkit-user-select: none;
@@ -2262,6 +2283,11 @@ p.simplesearch-results,
   width: 100%;
   position: relative;
   outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  background: #f6f9fc;
 }
 .carousel .slide a {
   -webkit-user-select: none;
@@ -2276,18 +2302,48 @@ p.simplesearch-results,
   width: 100%;
   height: auto;
 }
+.carousel .slide.is-selected .cover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+.carousel .slide.is-selected .info,
+.carousel .slide.is-selected .title,
+.carousel .slide.is-selected .description,
+.carousel .slide.is-selected .button {
+  animation: fade-in-up 600ms ease-in-out forwards;
+}
+@keyframes fade-in-up {
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.carousel .slide .cover,
 .carousel .slide .info {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  padding: 2em;
-  background: #f6f9fc;
-  background: linear-gradient(to top right, rgba(246, 249, 252, 0.75), transparent);
+  width: 50%;
+}
+.carousel .slide .cover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  filter: grayscale(1);
+  opacity: 0;
+  transition: filter 800ms ease-in-out, opacity 250ms ease-in-out;
+}
+.carousel .slide .info {
+  padding: 5em;
+}
+.carousel .slide:nth-of-type(even) {
+  flex-flow: row-reverse wrap;
+}
+.carousel .slide .info,
+.carousel .slide .title,
+.carousel .slide .description,
+.carousel .slide .button {
+  opacity: 0;
+  transform: translate(0, 1em);
 }
 .carousel .slide .title {
-  margin: 0;
   font-weight: 600;
+  transition: 250ms ease;
 }
 .carousel .slide .title {
   font-size: 1.75rem;
@@ -2305,23 +2361,15 @@ p.simplesearch-results,
 .carousel .slide .description {
   color: #0D485F;
   font-weight: 500;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
+  transition: 250ms ease;
 }
-.carousel .slide .description {
-  font-size: 1rem;
-}
-@media screen and (min-width: 38rem) {
-  .carousel .slide .description {
-    font-size: calc(1rem + 0.5 * ((100vw - 38rem) / 32));
-  }
-}
-@media screen and (min-width: 70rem) {
-  .carousel .slide .description {
-    font-size: 1.5rem;
-  }
+.carousel .slide .description p {
+  margin-bottom: 0.25em;
 }
 .carousel .slide .button {
   margin: 0.5em 0;
+  transition: 250ms ease;
 }
 .features .group {
   margin: 0 -1em;
@@ -2352,8 +2400,7 @@ p.simplesearch-results,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 330px;
-  width: 100%;
+  width: calc(25% - 2em);
   margin: 3em 1em;
   padding: 2em;
   min-height: 500px;

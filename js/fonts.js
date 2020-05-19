@@ -9,8 +9,8 @@
             'Optima'
         ]  ,
         urls: [
-            '@/fonts/optima/stylesheet.css',
-            '@/fonts/adobe-caslon-pro/stylesheet.css'
+            '@/../fonts/optima/stylesheet.css',
+            '@/../fonts/adobe-caslon-pro/stylesheet.css'
         ]
       },
       timeout: 2000

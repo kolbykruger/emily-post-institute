@@ -55,7 +55,7 @@
         align-items: center;
         justify-content: space-between;
         flex-flow: row wrap;
-        background: #f6f9fc;
+        background: #fff;
 
         a {
             user-select: none;
@@ -90,13 +90,8 @@
             }
         }
 
-        .cover,
-        .info {
-            width: 50%;
-            //max-width: 600px;
-        }
-
         .cover {
+            flex: 1;
             box-shadow: $box-shadow-5;
             filter: grayscale(1);
             opacity: 0;
@@ -104,6 +99,10 @@
         }
 
         .info {
+            flex: 1.618;
+        }
+
+        .details {
             padding: 5em;
         }
 
@@ -129,18 +128,19 @@
 
         .title {
             @include fluid('font-size', 1.75rem, 3rem);
-            font-weight: 600;
             transition: $transition-2;
+            color: $color-6;
         }
 
         .description {
-            color: $color-6;
-            font-weight: 500;
-            margin-bottom: 0.75em;
+            margin-top: 1em;
+            margin-bottom: 1.5em;
             transition: $transition-2;
 
             p {
+                @include fluid('font-size', 1.25rem, 1.625rem);
                 margin-bottom: 0.25em;
+                font-weight: 400;
             }
         }
 

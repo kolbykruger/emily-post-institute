@@ -1,27 +1,39 @@
 $menu-background-color: #f6f9fc;
 
+body {
+
+    &.navigation-open {
+        //overflow-y: hidden;
+    }
+}
+
 .menus {
     position: fixed;
-    top: 0;
+    top: 8em;
     left: 0;
+    right: 0;
+    bottom: 1em;
+    max-width: $container-width;
+    margin: 0 auto;
     width: 100%;
-    min-height: 100vh;
-    background: $menu-background-color;
-    overflow: hidden;
-    transform: translate(0, -100%);
-    transition: box-shadow 0.25s ease-in-out;
+    transform: translate(0, -150%);
+    transition: opacity 0.25s ease-in-out, transform 0s;
     z-index: 2;
 
+    transform-style: preserve-3d;
+    will-change: transform;
+    perspective: 1000px;
+
     &.menu-closing {
-        animation: menu-close-transform 0.6s ease-in-out forwards;
+        transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+        transform: translate(0, -100%);
     }
 
     body.navigation-open & {
-        animation: menu-open-transform 0.6s ease-in-out forwards, menu-open-background 0.6s 0.3s ease-in-out forwards;
-        box-shadow: $box-shadow-5;
+        transform: translate(0, 0);
 
         .container {
-            animation: menu-open-container-opacity 0.3s ease-in forwards 0.6s;
+            animation: menu-open-container-opacity 0.3s ease-in forwards 0.3s;
         }
     }
 }
@@ -32,14 +44,14 @@ $menu-background-color: #f6f9fc;
     left: 0;
     width: 0;
     height: 0;
-    background: $menu-background-color;
+    //background: $color-grey-3;
     opacity: 0;
     z-index: -1;
     cursor: pointer;
     transition: opacity 0.6s ease-in-out;
 
     body.navigation-open & {
-        opacity: 0.3;
+        opacity: 0.15;
         z-index: 1;
         width: 100%;
         height: 100%;
@@ -50,15 +62,18 @@ $menu-background-color: #f6f9fc;
     position: absolute;
     top: 0;
     left: 0;
-    margin-top: 8em;
+    padding: 2em;
+    padding-bottom: 4em;
     width: 100%;
-    height: 100%;
-    min-height: 800px;
-    max-height: 100%;
+    height: auto;
+    max-height: 80vh;
     overflow: auto;
-    background: $menu-background-color;
+    background: #fff;
+    opacity: 0;
     outline: none;
-    //color: #fff;
+    border-radius: 0.125em;
+    transform: translate3d(0px, 12px, -18px);
+    transition: transform 0.25s cubic-bezier(0.86, 0, 0.07, 1);
 
     @media (max-height: 850px) {
         padding-bottom: 10em;
@@ -69,6 +84,9 @@ $menu-background-color: #f6f9fc;
 
     &.menu-open {
         z-index: 2;
+        box-shadow: $box-shadow-5;
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
 
         .group > * {
             opacity: 0;
@@ -82,8 +100,20 @@ $menu-background-color: #f6f9fc;
         }
     }
 
-    .flickity-viewport {
-        width: 100%;
+    .menu-closer {
+        appearance: none;
+            -webkit-apearance: none;
+            -moz-appearance: none;
+        position: absolute;
+        bottom: 1em;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        border: none;
+        background: none;
+        font-size: 1rem;
+        opacity: 0.65;
+        cursor: pointer;
     }
 
     .menu-head {
@@ -114,7 +144,7 @@ $menu-background-color: #f6f9fc;
         .menu-section {
             width: 25%;
             padding: 1em;
-            margin-bottom: 3em;
+            margin-bottom: 2em;
 
             @media (max-width: 1150px) {
                 width: 33.333%;

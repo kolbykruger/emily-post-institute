@@ -50,60 +50,15 @@ $('.carousel .group').flickity({
 
 $('.features .group').flickity({
     cellSelector: '.item',
+    wrapAround: true,
     contain: true,
     adaptiveHeight: true,
-    cellAlign: 'left',
+    cellAlign: 'center',
     prevNextButtons: true,
-    pageDots: false,
+    pageDots: true,
     imagesLoaded: true,
-    groupCells: 2,
-});
-
-//Menu Books
-document.addEventListener('DOMContentLoaded', function() {
-    let bestSellers = document.querySelector('.books-menu .menu-section:nth-of-type(1) .book-list');
-    let bestSellerChildren = '';
-    let newProducts = document.querySelector('.books-menu .menu-section:nth-of-type(2) .book-list');
-    let newProductsChildren = '';
-
-    if (bestSellers) {
-        bestSellerChildren = bestSellers.querySelectorAll('.book-item');
-    }
-    if (newProducts) {
-        newProductsChildren = newProducts.querySelectorAll('.book-item');
-    }
-
-    if (bestSellerChildren.length > 3) {
-        //do slider
-        var menuSliderOne = new Flickity(bestSellers, {
-            cellSelector: '.book-item',
-            wrapAround: false,
-            adaptiveHeight: true,
-            cellAlign: 'left',
-            contain: true,
-            groupCells: 3,
-            prevNextButtons: false,
-            pageDots: true,
-            imagesLoaded: true,
-        });
-    }
-
-    if (newProductsChildren.length > 3) {
-        //do slider
-        var menuSliderOne = new Flickity(newProducts, {
-            cellSelector: '.book-item',
-            wrapAround: false,
-            adaptiveHeight: true,
-            cellAlign: 'left',
-            contain: true,
-            groupCells: 3,
-            prevNextButtons: false,
-            pageDots: true,
-            imagesLoaded: true
-        });
-    }
-
-
+    groupCells: 4,
+    autoPlay: 8000,
 });
 
 //Universal Tables

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuContainer = document.querySelector('.menus');
     const menus = document.querySelectorAll('.menu');
     const menuActions = document.querySelectorAll('.menus a, .menus button');
+    const menuClosers = document.querySelectorAll('.menus .menu-closer');
 
     for (let a = 0; a < menuActions.length; a++) {
         menuActions[a].setAttribute('tabindex', '-1');
@@ -22,6 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
             //Open menu
             openMenu(elem)
 
+        })
+    }
+
+    for (let b = 0; b < menuClosers.length; b++) {
+        menuClosers[b].addEventListener('click', function() {
+            let elem = document.querySelector('.menu.menu-open');
+            closeMenu(elem)
         })
     }
 
@@ -70,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeMenu(elem) {
 
         for (let m = 0; m < menus.length; m++) {
-            menus[m].classList.add('menu-open');
+            menus[m].classList.remove('menu-open');
             menus[m].setAttribute('aria-hidden', true);
             menus[m].setAttribute('aria-expanded', false);
             menus[m].setAttribute('tabindex', 0);

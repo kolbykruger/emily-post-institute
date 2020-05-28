@@ -18,16 +18,14 @@
     }
 
     .flickity-prev-next-button {
+        background: none;
 
         &.next {
-            top: 100%;
-            right: 0;
+            right: -3em;
         }
 
         &.previous {
-            top: 100%;
-            right: 44px;
-            left: auto;
+            left: -3em;
         }
 
         &[disabled] {
@@ -49,7 +47,7 @@
         text-decoration: none;
         color: inherit;
         background: $color-1;
-        transition: $transition-1;
+        transition: box-shadow $transition-1, transform $transition-1;
 
         &:nth-of-type(1),
         &:nth-of-type(7) {

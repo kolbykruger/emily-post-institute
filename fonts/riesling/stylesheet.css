@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Riesling';
+    src: url('riesling.woff2') format('woff2'),
+        url('riesling.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

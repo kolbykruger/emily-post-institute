@@ -1752,7 +1752,6 @@ body.navigation-open .menu-overlay {
 .menu .group .menu-section {
   width: 25%;
   padding: 1em;
-  margin-bottom: 2em;
 }
 @media (max-width: 1150px) {
   .menu .group .menu-section {
@@ -1794,12 +1793,13 @@ body.navigation-open .menu-overlay {
   background: #C2C3C4;
 }
 .menu h2 {
-  padding: 1rem;
+  padding: 0 1rem;
   margin: 0;
 }
 .menu h3 {
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.025em;
+  font-size: 1.5rem;
 }
 .menu h3 a {
   color: #0D485F;
@@ -1815,7 +1815,7 @@ body.navigation-open .menu-overlay {
 }
 .menu ul a:not(.button) {
   position: relative;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   overflow-wrap: break-word;
   text-decoration: none;
   color: #546E78;
@@ -1830,6 +1830,7 @@ body.navigation-open .menu-overlay {
 .menu .menu-actions {
   width: 100%;
   padding: 0 1em;
+  margin-top: 1em;
 }
 .menu .menu-actions ~ .menu-section {
   margin-top: 3em;
